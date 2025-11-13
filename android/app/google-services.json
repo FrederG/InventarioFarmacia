@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "96301688278",
+    "project_id": "inventariofarmacia-b7f48",
+    "storage_bucket": "inventariofarmacia-b7f48.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:96301688278:android:62114149ab3eef8ffaf077",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWyaXLHDFS_j83QG8fo2CrZiK-4Aq8Bx8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
