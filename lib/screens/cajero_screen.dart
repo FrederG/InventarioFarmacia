@@ -585,21 +585,41 @@ class _CajeroScreenState extends State<CajeroScreen> {
   }
   
   // Helper para las filas de resumen (Estilo profesional)
-  Widget _buildTotalRow(String label, double amount, {double fontSize = 16, Color color = Colors.black, bool isBold = false}) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 6.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          Text(
-            label,
-            style: TextStyle(
-              fontSize: fontSize,
-              fontWeight: isBold ? FontWeight.bold : FontWeight.normal,
-              color: color,
+  Widget _buildTotalRow(
+  String label,
+  double amount, {
+  double fontSize = 16,
+  Color color = Colors.black,
+  bool isBold = false,
+}) {
+  return Padding(
+    padding: const EdgeInsets.symmetric(vertical: 6.0),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: <Widget>[
+        
+        // ---------- TEXTO IZQUIERDO (TOTAL A PAGAR) ----------
+        Expanded(
+          child: FittedBox(
+            alignment: Alignment.centerLeft,
+            fit: BoxFit.scaleDown,  // 🎯 Ajusta automáticamente
+            child: Text(
+              label,
+              style: TextStyle(
+                fontSize: fontSize,
+                fontWeight: isBold ? FontWeight.bold : FontWeight.normal,
+                color: color,
+              ),
             ),
           ),
-          Text(
+        ),
+
+        const SizedBox(width: 10),
+
+        // ---------- VALOR A LA DERECHA ----------
+        FittedBox(
+          fit: BoxFit.scaleDown, // 🎯 Evita desbordarse
+          child: Text(
             '\$${amount.toStringAsFixed(2)}',
             style: TextStyle(
               fontSize: fontSize,
@@ -607,8 +627,9 @@ class _CajeroScreenState extends State<CajeroScreen> {
               color: color,
             ),
           ),
-        ],
-      ),
-    );
-  }
+        ),
+      ],
+    ),
+  );
 }
+} 
