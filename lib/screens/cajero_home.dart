@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-
+import 'cajero_screen.dart';
 class CajeroHome extends StatelessWidget {
   const CajeroHome({super.key});
 
-  @override
+ @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Panel Cajero')),
-      body: const Center(child: Text('Bienvenido Cajero 💊')),
-    );
+    return const CajeroScreen();
   }
 }

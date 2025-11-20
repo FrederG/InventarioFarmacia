@@ -17,6 +17,65 @@ const Color corporateBlue = Color(0xFF007AFF);
 const Color backgroundColor = Color(0xFFF7F9FC);
 
 // ------------------------------------------------
+// PANTALLA: ACERCA DE NOSOTROS
+// ------------------------------------------------
+class AboutUsScreen extends StatelessWidget {
+  const AboutUsScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Container(
+        padding: const EdgeInsets.all(40),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(15),
+          boxShadow: [
+            BoxShadow(
+                color: Colors.black.withOpacity(0.05),
+                spreadRadius: 2,
+                blurRadius: 10,
+                offset: const Offset(0, 5))
+          ],
+        ),
+        constraints: const BoxConstraints(maxWidth: 400),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const Text(
+              "Acerca de Nosotros",
+              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: Colors.black87),
+            ),
+            const SizedBox(height: 30),
+            const CircleAvatar(
+              radius: 50,
+              backgroundColor: corporateBlue,
+              child: Icon(Icons.code, size: 50, color: Colors.white),
+            ),
+            const SizedBox(height: 20),
+            const Text(
+              "Desarrollado por:",
+              style: TextStyle(fontSize: 16, color: Colors.grey),
+            ),
+            Text(
+              "Diego Marin",
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700, color: corporateBlue),
+            ),
+            const SizedBox(height: 10),
+            const Text(
+              "Plataforma de Administración Farmacéutica\nFARMA-DASH v1.0",
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 14, color: Colors.black54),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+// ------------------------------------------------
 // DASHBOARD PRINCIPAL
 // ------------------------------------------------
 class AdminDashboardLayout extends StatefulWidget {
@@ -51,10 +110,11 @@ class _AdminDashboardLayoutState extends State<AdminDashboardLayout> {
       'icon': Icons.local_shipping_outlined,
       'page': const ProveedoresScreen(),
     },
+    // Eliminado 'Estadísticas' aquí
     {
-      'label': 'Estadísticas',
-      'icon': Icons.bar_chart_outlined,
-      'page': const Center(child: Text("Estadísticas"))
+      'label': 'Acerca de',
+      'icon': Icons.info_outline,
+      'page': const AboutUsScreen()
     },
   ];
 
@@ -214,6 +274,7 @@ class _AdminDashboardLayoutState extends State<AdminDashboardLayout> {
                     prefixIcon: Icon(Icons.search, color: Colors.grey),
                     filled: true,
                     fillColor: Color(0xFFF0F0F0),
+                    contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 15), // Ajuste de padding para centrar
                     border: OutlineInputBorder(
                       borderSide: BorderSide.none,
                       borderRadius: BorderRadius.all(Radius.circular(8)),

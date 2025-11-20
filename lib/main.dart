@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Inventario Farmacia Web',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: const AdminDashboardLayout(),
+      home: const LoginScreen(),
     );
   }
 }
