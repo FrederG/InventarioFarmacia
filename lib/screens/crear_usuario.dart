@@ -100,7 +100,7 @@ class _CrearUsuarioScreenState extends State<CrearUsuarioScreen> {
                 ],
               ),
               child: Padding(
-                padding: const EdgeInsets.all(30.0),
+                padding: const EdgeInsets.all(10.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
