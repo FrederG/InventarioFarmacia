@@ -44,7 +44,7 @@ class _CrearUsuarioScreenState extends State<CrearUsuarioScreen> {
       });
 
       setState(() {
-        mensaje = "✅ Usuario creado correctamente";
+        mensaje = "Usuario creado correctamente";
       });
 
       // Limpiar los campos
@@ -54,11 +54,11 @@ class _CrearUsuarioScreenState extends State<CrearUsuarioScreen> {
       rolSeleccionado = 'CAJERO';
     } on FirebaseAuthException catch (e) {
       setState(() {
-        mensaje = "⚠️ Error: ${e.message}";
+        mensaje = " Error: ${e.message}";
       });
     } catch (e) {
       setState(() {
-        mensaje = "⚠️ Error inesperado: $e";
+        mensaje = " Error inesperado: $e";
       });
     } finally {
       setState(() {
@@ -85,7 +85,7 @@ class _CrearUsuarioScreenState extends State<CrearUsuarioScreen> {
         child: Padding(
           padding: const EdgeInsets.all(40.0),
           child: SizedBox(
-            width: 450, // Ligeramente más ancho para mejor distribución
+            width: 400, // Ligeramente más ancho para mejor distribución
             child: Container(
               // Usamos Container con BoxDecoration para tener control total del sombreado
               decoration: BoxDecoration(

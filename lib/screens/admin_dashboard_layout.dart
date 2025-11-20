@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_application_1/screens/ProveedoresScreen.dart';
 import 'inventario_screen.dart'; // Asegúrate de tener este archivo
 import 'crear_usuario.dart'; // Asegúrate de tener este archivo
 
@@ -35,7 +36,7 @@ class _AdminDashboardLayoutState extends State<AdminDashboardLayout> {
     {'label': 'Dashboard', 'icon': Icons.dashboard_outlined, 'page': const AdminDashboardContent()}, // 0
     {'label': 'Inventario', 'icon': Icons.inventory_2_outlined, 'page': const InventarioScreen()}, // 1
     {'label': 'Usuarios', 'icon': Icons.people_outline, 'page': const CrearUsuarioScreen()}, // 2
-    {'label': 'Proveedores', 'icon': Icons.local_shipping_outlined, 'page': _buildPlaceholder('Proveedores')}, // 3 - NUEVO
+    {'label': 'Proveedores', 'icon': Icons.local_shipping_outlined, 'page': const ProveedoresScreen()}, // 3 - NUEVO
     {'label': 'Estadísticas', 'icon': Icons.bar_chart_outlined, 'page': _buildPlaceholder('Estadísticas')}, // 4
   ];
 
